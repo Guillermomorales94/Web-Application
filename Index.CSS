@@ -28,6 +28,18 @@ body {
     font-size: 20px;
   }
   
+h3, .honeyComb {
+  display: flex;
+  flex-direction: colomun;
+  align-items: center;
+  margin-top: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3em;
+  background: url(image/pic6.jpg) fixed;
+  border: 0.1em #278c85
+}
+
   button {
     margin-top: 20px;
     width: 300px;
