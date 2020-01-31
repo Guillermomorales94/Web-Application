@@ -4,7 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Dosis', sans-serif;
-  color:#278c85;
+  color:#3CC8C3;
   font-size: 20px;
   margin: 0;
 }
@@ -13,8 +13,8 @@ h1 {
   margin: 60px 60px 0 60px;
   font-size: 30px; 
   padding-bottom: 30px;
-  border-bottom: 1px solid #b5b5b7;
-  color: #278c85;
+  border-bottom: 1px solid white;
+  color:#3CC8C3;
 }
 
 h1, h2 {
@@ -38,8 +38,7 @@ h2 {
   margin-bottom: 0em;
   background: url(image/pic6.jpg) fixed;
   border: white
-}
-
+  }
 
 button {
   margin-top: 20px;
@@ -48,7 +47,7 @@ button {
   background: #252839;
   font-family: 'Dosis', sans-serif;
   font-size: 20px;
-  color: #278c85;
+  color: #3CC8C3;
   border: .5px solid #ffffff;
 }
 
@@ -99,7 +98,7 @@ li {
 }
   
 .selected {
-  background: #278c85;
+  background: #3CC8C3;
   color:#252839;
 }
 
@@ -111,5 +110,3 @@ li {
   background-color: red;
 }
 
-
-  
