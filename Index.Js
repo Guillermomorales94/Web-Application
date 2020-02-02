@@ -130,3 +130,26 @@ function displayScore(){
     $('.comment').text('GREAT JOB!');
   }
 }
+
+
+//Reset and Retake the Code
+
+$(".retake-button").click(function(){
+  $('.end-quiz').hide();
+  $('.RETAKE QUIZ').hide();
+  $('.score').hide();
+  $('.start-quiz').show();
+ console.log("Retake Quiz button clicked");
+ event.preventDefault();
+ resetStats();
+});
+
+function retake () {
+$('.start-quiz').hide();
+  $('.next').hide();
+  $('.questions').show();
+  $('.score').hide();
+  $('.end-score').hide();
+  $('.question-number').hide();
+ console.log("Start Quiz button clicked");
+}
