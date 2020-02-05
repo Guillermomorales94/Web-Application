@@ -4,7 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Dosis', sans-serif;
-  color:#3CC8C3;
+  color:#278c85;
   font-size: 20px;
   margin: 0;
 }
@@ -14,7 +14,7 @@ h1 {
   font-size: 30px; 
   padding-bottom: 30px;
   border-bottom: 1px solid white;
-  color:#3CC8C3;
+  color:#278c85;
 }
 
 h1, h2 {
@@ -47,8 +47,9 @@ button {
   background: #252839;
   font-family: 'Dosis', sans-serif;
   font-size: 20px;
-  color: #3CC8C3;
+  color: #278c85;
   border: .5px solid #ffffff;
+  cursor: pointer;
 }
 
 .start-quiz {
@@ -95,18 +96,24 @@ li {
   font-size: 18px;
   border-radius: 5px;
   padding: 5px;
+  cursor: pointer
 }
   
 .selected {
-  background: #3CC8C3;
+  background: #278c85;
   color:#252839;
 }
 
 .correct {
   background-color: green;
+  background-image: 
 }
 
 .incorrect {
   background-color: red;
+  
 }
 
+#display-results {
+  display: none;
+}
