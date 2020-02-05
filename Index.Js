@@ -3,45 +3,48 @@
 const myQuestions = [
 	{
 	 'question':	'Select the correct HTML for creating a hyperlink ?',
-	 'answers': ["A url = http://www.Fizzbangpop.com>fizzbangpop.com","A>http://www.Fizzbangpop.com","Questions A + B","Ahref=http:\\www.Fizzbangpop.comfizzbangpop"],
-	 'correct': 3
+	 'answers': ["A - A url = http://www.Fizzbangpop.com>fizzbangpop.com","B - A>http://www.Fizzbangpop.com","C - Questions A + B","D - Ahref=http:\\www.Fizzbangpop.comfizzbangpop"],
+	 'correct': 3,
 	},
+
 	{
 	 'question': 'Select the correct option to create an email link?',
-	 'answers': ["Mail>xxx@yyy.com/mail", "A href=mailto:xxx@yyy.com", "A href=xxx@yyy.com", "Mail href=fizz@bang.com" ],
-	 'correct':  1
-	},
-	{
+	 'answers': ["A - Mail>xxx@yyy.com/mail", "B - A href=mailto:xxx@yyy.com", "C - A href=xxx@yyy.com", "D - Mail href=fizz@bang.com" ],
+   'correct':  1
+  },
+
+   {
 	 'question': 'Select the correct property used to set the background color of an image?',
-	 'answers': ["background:color","background-color","color:background","All the above"],
+	 'answers': ["A - background:color","B - background-color","C - color:background","D - All the above"],
 	 'correct':  1
 	},
 	{
-	 'question': 'Select the best option to make a list that displays a list of items that contain bullet points?',
-	 'answers': ["Li","Ul","Ol","D1"],
-	 'correct':  3
+	 'question': 'Select the best option to make a list that contains bullet points?',
+	 'answers': ["A - Li","B - Ul","C - Ol","D - D1"],
+	 'correct':  1
 	},
 	
 	{
 	 'question':"Select the appropriate HTML Tag used for the largest heading?",
-	 'answers': ["Head", "H1", "Large-font", "H6"],
+	 'answers': ["A - Head", "B - H1", "C - Large-font", "D - H6"],
 	 'correct': 1
 	},
 	{
 	 'question':"In CSS, Select the property to set an image in a list instead of a standard bullet point?",
-	 'answers': ["list-image:","image-list:","list-style-image:","list-image-src:"],
+	 'answers': ["A - list-image:","B - image-list:","C - list-style-image:","D - list-image-src:"],
 	 'correct':  2
 	},
 	{
 	 'question':"In CSS, what is the correct option to select all the tags on a page?",
-	 'answers': ["$p {}", "p {}", ".p {}", "#p {}"],
+	 'answers': ["A - $p {}", "B - p {}", "C - .p {}", "D - #p {}"],
 	 'correct': 1  
 	},
 	{
 	 'question': "Select the property used to create space between the elements border and inner content?",
-	 'answers': ["margin", "border", "spacing", "padding"],
+	 'answers': ["A - margin", "B - border", "C - spacing", "D - padding"],
 	 'correct': 3
 	}
+
 	];
 
 var score = 0;
@@ -62,6 +65,7 @@ $(document).ready(function(){
   $(".next-button").click(function(event){
     console.log("Next button clicked");
     displayQuestion();
+    $('div#display-results').hide()
     $('.next').hide();
     $('.submit').show();
   });
@@ -76,6 +80,9 @@ $(document).ready(function(){
       alert('Please select an answer to move forward !!');
     }
   });
+
+
+
   
   // Create an event listener to listen for a click on the Retake button and refresh the page
   $(".retake-button").click(function(){
@@ -113,22 +120,39 @@ function checkAnswer(answer){
   if(listQuestion.correct == answer){
     score++;
     $('li.selected').addClass('correct');
+    $('div#display-results').text('Correct!')
   } else {
     $('li.selected').addClass('incorrect');
-    $('listQuestion.correct').addClass('correct');
+    $('listQuestion.correct').addClass('solution');
+    $('div#display-results').text('Incorrect!')
   }
   $('.score').text('Current Score: '+score);
+  $('div#display-results').show()
   current++;
 }
+// I want to add the correct answer when marked incorrect ---
+
+
+// I as well want to add if and else statment if = great job else = Try again
 
 //Display score
 function displayScore(){
   $('.questions').hide();
   $('.end-quiz').show();
-  $('.end-score').text("Your score is: " +score + '/8');
+  $('.end-score').text("Your score is: " +score + '/8', "");
   if(score >= 6){
     $('.comment').text('GREAT JOB!');
   }
+  else {
+    $('.comment').text('Try Again!');
+  }
+}
+
+function resetStats() {
+  // takes user back to start upon click
+  $('.retake-button').click(function() {
+    location.reload();
+  });
 }
 
 
@@ -144,12 +168,10 @@ $(".retake-button").click(function(){
  resetStats();
 });
 
-function retake () {
-$('.start-quiz').hide();
-  $('.next').hide();
-  $('.questions').show();
-  $('.score').hide();
-  $('.end-score').hide();
-  $('.question-number').hide();
- console.log("Start Quiz button clicked");
-}
+
+
+
+
+
+
+
